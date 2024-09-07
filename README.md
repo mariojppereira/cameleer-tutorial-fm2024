@@ -55,6 +55,14 @@ Use the following command:
   opam switch create cameleer-tutorial ocaml-base-compiler.4.14.0
 ```
 
+This might take a while. After the installation procedure succeeds,
+`opam` might ask to update your current environment. This is as
+follows:
+
+```
+  eval $(opam env)
+```
+
 ### The Cameleer Tool
 
 First, you should clone the `master` branch from the Cameleer Github
@@ -69,4 +77,8 @@ folder:
 
 ```
   cd cameleer
+```
+
+```
+  opam pin add . -y
 ```
