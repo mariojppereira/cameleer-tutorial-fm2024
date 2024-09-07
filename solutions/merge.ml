@@ -41,12 +41,11 @@ module Make (E : PRE_ORD) = struct
         requires forall x y. List.mem x acc -> List.mem y l1 -> E.le x y
         requires forall x y. List.mem x acc -> List.mem y l2 -> E.le x y
         ensures  sorted_list r
-        (* ensures  permut r (acc @ l1 @ l2) *)
         variant  l1, l2 *)
 
   let merge l1 l2 = merge_aux [] l1 l2
   (*@ r = merge l1 l2
         requires sorted_list l1 && sorted_list l2
-        ensures  sorted_list r  (* && permut r (l1 @ l2) *) *)
+        ensures  sorted_list r *)
 
 end
