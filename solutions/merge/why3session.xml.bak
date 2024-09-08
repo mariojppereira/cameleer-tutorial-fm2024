@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE why3session PUBLIC "-//Why3//proof session v5//EN"
+"https://www.why3.org/why3session.dtd">
+<why3session shape_version="6">
+<prover id="0" name="Alt-Ergo" version="2.5.3" timelimit="5" steplimit="0" memlimit="1000"/>
+<prover id="1" name="CVC5" version="1.0.6-dev.66.d284ecaae" timelimit="1" steplimit="0" memlimit="1000"/>
+<prover id="2" name="Z3" version="4.12.1" timelimit="1" steplimit="0" memlimit="1000"/>
+<file format="ocaml" proved="true">
+<path name=".."/><path name="merge.ml"/>
+<theory name="Merge" proved="true">
+ <goal name="Make.sorted_list&#39;vc" expl="VC for sorted_list" proved="true">
+ <proof prover="2"><result status="valid" time="0.036141" steps="116186"/></proof>
+ </goal>
+ <goal name="Make.sorted_mem" proved="true">
+ <transf name="induction_ty_lex" proved="true" >
+  <goal name="sorted_mem.0" proved="true">
+  <transf name="split_vc" proved="true" >
+   <goal name="sorted_mem.0.0" proved="true">
+   <proof prover="0"><result status="valid" time="0.028911" steps="27"/></proof>
+   </goal>
+   <goal name="sorted_mem.0.1" proved="true">
+   <proof prover="0"><result status="valid" time="0.032735" steps="26"/></proof>
+   </goal>
+   <goal name="sorted_mem.0.2" proved="true">
+   <proof prover="0"><result status="valid" time="0.027425" steps="18"/></proof>
+   </goal>
+   <goal name="sorted_mem.0.3" proved="true">
+   <proof prover="0"><result status="valid" time="0.039293" steps="152"/></proof>
+   </goal>
+   <goal name="sorted_mem.0.4" proved="true">
+   <proof prover="1"><result status="valid" time="0.189426" steps="40759"/></proof>
+   </goal>
+   <goal name="sorted_mem.0.5" proved="true">
+   <proof prover="0"><result status="valid" time="0.028835" steps="32"/></proof>
+   </goal>
+  </transf>
+  </goal>
+ </transf>
+ </goal>
+ <goal name="Make.sorted_append" proved="true">
+ <transf name="introduce_premises" proved="true" >
+  <goal name="sorted_append.0" proved="true">
+  <transf name="induction_arg_ty_lex" proved="true" arg1="l1">
+   <goal name="sorted_append.0.0" proved="true">
+   <transf name="split_vc" proved="true" >
+    <goal name="sorted_append.0.0.0" proved="true">
+    <proof prover="0"><result status="valid" time="0.030770" steps="21"/></proof>
+    </goal>
+    <goal name="sorted_append.0.0.1" proved="true">
+    <proof prover="0"><result status="valid" time="0.025795" steps="16"/></proof>
+    </goal>
+    <goal name="sorted_append.0.0.2" proved="true">
+    <proof prover="0"><result status="valid" time="0.030206" steps="21"/></proof>
+    </goal>
+    <goal name="sorted_append.0.0.3" proved="true">
+    <proof prover="0"><result status="valid" time="0.031061" steps="25"/></proof>
+    </goal>
+    <goal name="sorted_append.0.0.4" proved="true">
+    <proof prover="0"><result status="valid" time="0.065871" steps="383"/></proof>
+    </goal>
+    <goal name="sorted_append.0.0.5" proved="true">
+    <proof prover="0"><result status="valid" time="0.047148" steps="241"/></proof>
+    </goal>
+    <goal name="sorted_append.0.0.6" proved="true">
+    <proof prover="0"><result status="valid" time="0.036652" steps="81"/></proof>
+    </goal>
+    <goal name="sorted_append.0.0.7" proved="true">
+    <proof prover="0"><result status="valid" time="0.078905" steps="733"/></proof>
+    </goal>
+   </transf>
+   </goal>
+  </transf>
+  </goal>
+ </transf>
+ </goal>
+ <goal name="Make.merge_aux&#39;vc" expl="VC for merge_aux" proved="true">
+ <proof prover="0" timelimit="1"><result status="valid" time="0.736493" steps="9905"/></proof>
+ <transf name="split_vc" proved="true" >
+  <goal name="merge_aux&#39;vc.0" expl="variant decrease" proved="true">
+  <proof prover="2"><result status="valid" time="0.021341" steps="31584"/></proof>
+  </goal>
+  <goal name="merge_aux&#39;vc.1" expl="precondition" proved="true">
+  <proof prover="2"><result status="valid" time="0.131321" steps="348470"/></proof>
+  </goal>
+  <goal name="merge_aux&#39;vc.2" expl="precondition" proved="true">
+  <proof prover="2"><result status="valid" time="0.054533" steps="174722"/></proof>
+  </goal>
+  <goal name="merge_aux&#39;vc.3" expl="precondition" proved="true">
+  <proof prover="1"><result status="valid" time="0.217363" steps="43587"/></proof>
+  </goal>
+  <goal name="merge_aux&#39;vc.4" expl="variant decrease" proved="true">
+  <proof prover="2"><result status="valid" time="0.021520" steps="31595"/></proof>
+  </goal>
+  <goal name="merge_aux&#39;vc.5" expl="precondition" proved="true">
+  <proof prover="2"><result status="valid" time="0.124059" steps="347096"/></proof>
+  </goal>
+  <goal name="merge_aux&#39;vc.6" expl="precondition" proved="true">
+  <proof prover="1"><result status="valid" time="0.216457" steps="44375"/></proof>
+  </goal>
+  <goal name="merge_aux&#39;vc.7" expl="precondition" proved="true">
+  <proof prover="2"><result status="valid" time="0.052299" steps="175101"/></proof>
+  </goal>
+  <goal name="merge_aux&#39;vc.8" expl="postcondition" proved="true">
+  <transf name="split_vc" proved="true" >
+   <goal name="merge_aux&#39;vc.8.0" expl="postcondition" proved="true">
+   <proof prover="0"><result status="valid" time="0.032147" steps="90"/></proof>
+   </goal>
+   <goal name="merge_aux&#39;vc.8.1" expl="postcondition" proved="true">
+   <proof prover="0"><result status="valid" time="0.045565" steps="213"/></proof>
+   </goal>
+   <goal name="merge_aux&#39;vc.8.2" expl="postcondition" proved="true">
+   <proof prover="0"><result status="valid" time="0.042185" steps="213"/></proof>
+   </goal>
+   <goal name="merge_aux&#39;vc.8.3" expl="postcondition" proved="true">
+   <proof prover="0"><result status="valid" time="0.023674" steps="26"/></proof>
+   </goal>
+  </transf>
+  </goal>
+ </transf>
+ </goal>
+ <goal name="Make.merge&#39;vc" expl="VC for merge" proved="true">
+ <proof prover="1"><result status="valid" time="0.101513" steps="28461"/></proof>
+ </goal>
+</theory>
+</file>
+</why3session>

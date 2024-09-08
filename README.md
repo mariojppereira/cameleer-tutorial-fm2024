@@ -46,7 +46,7 @@ is `opam`, the OCaml packages manager.
 If you do not have `opam` already installed, please follow these
 [instructions](https://opam.ocaml.org/doc/Install.html).
 
-### Fresh opam switch
+### Fresh opam Switch
 
 To better follow this tutorial, we suggest you to install a fresh
 `opam` switch. This will avoid any conflicts between pre-installed

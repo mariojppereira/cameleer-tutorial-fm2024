@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE why3session PUBLIC "-//Why3//proof session v5//EN"
+"https://www.why3.org/why3session.dtd">
+<why3session shape_version="6">
+<prover id="0" name="Alt-Ergo" version="2.5.4" timelimit="5" steplimit="0" memlimit="1000"/>
+<prover id="1" name="CVC5" version="1.0.6-dev.66.d284ecaae" timelimit="1" steplimit="0" memlimit="1000"/>
+<file format="ocaml" proved="true">
+<path name=".."/><path name="same_fringe.ml"/>
+<theory name="Same_fringe" proved="true">
+ <goal name="Make.mk_zipper&#39;vc" expl="VC for mk_zipper" proved="true">
+ <proof prover="0"><result status="valid" time="0.047407" steps="300"/></proof>
+ </goal>
+ <goal name="Make.eq_enum&#39;vc" expl="VC for eq_enum" proved="true">
+ <transf name="split_vc" proved="true" >
+  <goal name="eq_enum&#39;vc.0" expl="variant decrease" proved="true">
+  <proof prover="0"><result status="valid" time="0.037965" steps="156"/></proof>
+  </goal>
+  <goal name="eq_enum&#39;vc.1" expl="postcondition" proved="true">
+  <transf name="split_vc" proved="true" >
+   <goal name="eq_enum&#39;vc.1.0" expl="postcondition" proved="true">
+   <transf name="split_vc" proved="true" >
+    <goal name="eq_enum&#39;vc.1.0.0" expl="postcondition" proved="true">
+    <proof prover="0"><result status="valid" time="0.022410" steps="24"/></proof>
+    </goal>
+    <goal name="eq_enum&#39;vc.1.0.1" expl="postcondition" proved="true">
+    <proof prover="0"><result status="valid" time="0.023312" steps="24"/></proof>
+    </goal>
+    <goal name="eq_enum&#39;vc.1.0.2" expl="postcondition" proved="true">
+    <proof prover="0"><result status="valid" time="0.029984" steps="48"/></proof>
+    </goal>
+    <goal name="eq_enum&#39;vc.1.0.3" expl="postcondition" proved="true">
+    <proof prover="0"><result status="valid" time="0.022313" steps="24"/></proof>
+    </goal>
+   </transf>
+   </goal>
+   <goal name="eq_enum&#39;vc.1.1" expl="postcondition" proved="true">
+   <proof prover="1"><result status="valid" time="0.186430" steps="39810"/></proof>
+   </goal>
+  </transf>
+  </goal>
+ </transf>
+ </goal>
+ <goal name="Make.same_fringe&#39;vc" expl="VC for same_fringe" proved="true">
+ <proof prover="0"><result status="valid" time="0.030131" steps="53"/></proof>
+ </goal>
+</theory>
+</file>
+</why3session>
