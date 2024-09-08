@@ -4,12 +4,12 @@
 <why3session shape_version="6">
 <prover id="0" name="Alt-Ergo" version="2.5.3" timelimit="5" steplimit="0" memlimit="1000"/>
 <prover id="1" name="CVC5" version="1.0.6-dev.66.d284ecaae" timelimit="1" steplimit="0" memlimit="1000"/>
-<prover id="2" name="Z3" version="4.12.1" timelimit="1" steplimit="0" memlimit="1000"/>
+<prover id="3" name="Alt-Ergo" version="2.5.4" timelimit="5" steplimit="0" memlimit="1000"/>
 <file format="ocaml" proved="true">
 <path name=".."/><path name="merge.ml"/>
 <theory name="Merge" proved="true">
  <goal name="Make.sorted_list&#39;vc" expl="VC for sorted_list" proved="true">
- <proof prover="2"><result status="valid" time="0.036141" steps="116186"/></proof>
+ <proof prover="3"><result status="valid" time="0.033551" steps="82"/></proof>
  </goal>
  <goal name="Make.sorted_mem" proved="true">
  <transf name="induction_ty_lex" proved="true" >
@@ -75,48 +75,6 @@
  </goal>
  <goal name="Make.merge_aux&#39;vc" expl="VC for merge_aux" proved="true">
  <proof prover="0" timelimit="1"><result status="valid" time="0.736493" steps="9905"/></proof>
- <transf name="split_vc" proved="true" >
-  <goal name="merge_aux&#39;vc.0" expl="variant decrease" proved="true">
-  <proof prover="2"><result status="valid" time="0.021341" steps="31584"/></proof>
-  </goal>
-  <goal name="merge_aux&#39;vc.1" expl="precondition" proved="true">
-  <proof prover="2"><result status="valid" time="0.131321" steps="348470"/></proof>
-  </goal>
-  <goal name="merge_aux&#39;vc.2" expl="precondition" proved="true">
-  <proof prover="2"><result status="valid" time="0.054533" steps="174722"/></proof>
-  </goal>
-  <goal name="merge_aux&#39;vc.3" expl="precondition" proved="true">
-  <proof prover="1"><result status="valid" time="0.217363" steps="43587"/></proof>
-  </goal>
-  <goal name="merge_aux&#39;vc.4" expl="variant decrease" proved="true">
-  <proof prover="2"><result status="valid" time="0.021520" steps="31595"/></proof>
-  </goal>
-  <goal name="merge_aux&#39;vc.5" expl="precondition" proved="true">
-  <proof prover="2"><result status="valid" time="0.124059" steps="347096"/></proof>
-  </goal>
-  <goal name="merge_aux&#39;vc.6" expl="precondition" proved="true">
-  <proof prover="1"><result status="valid" time="0.216457" steps="44375"/></proof>
-  </goal>
-  <goal name="merge_aux&#39;vc.7" expl="precondition" proved="true">
-  <proof prover="2"><result status="valid" time="0.052299" steps="175101"/></proof>
-  </goal>
-  <goal name="merge_aux&#39;vc.8" expl="postcondition" proved="true">
-  <transf name="split_vc" proved="true" >
-   <goal name="merge_aux&#39;vc.8.0" expl="postcondition" proved="true">
-   <proof prover="0"><result status="valid" time="0.032147" steps="90"/></proof>
-   </goal>
-   <goal name="merge_aux&#39;vc.8.1" expl="postcondition" proved="true">
-   <proof prover="0"><result status="valid" time="0.045565" steps="213"/></proof>
-   </goal>
-   <goal name="merge_aux&#39;vc.8.2" expl="postcondition" proved="true">
-   <proof prover="0"><result status="valid" time="0.042185" steps="213"/></proof>
-   </goal>
-   <goal name="merge_aux&#39;vc.8.3" expl="postcondition" proved="true">
-   <proof prover="0"><result status="valid" time="0.023674" steps="26"/></proof>
-   </goal>
-  </transf>
-  </goal>
- </transf>
  </goal>
  <goal name="Make.merge&#39;vc" expl="VC for merge" proved="true">
  <proof prover="1"><result status="valid" time="0.101513" steps="28461"/></proof>
