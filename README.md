@@ -99,10 +99,10 @@ Use `opam` to install, as well, some SMT solvers that we will be using
 during the tutorial:
 
 ```
-  opam install alt-ergo z3
+  opam install alt-ergo z3 -y
 ```
 
-I also recommend you to install the `CVC5` solver. The easiest way is
+I also recommend you to install the CVC5 solver. The easiest way is
 to download one of the pre-built binaries from the [GitHub release
 page](https://github.com/cvc5/cvc5/releases/). I will be using the
 release `cvc5-1.0.6` so this might also be a good choice for you. Move
@@ -123,5 +123,42 @@ The output of this command is the list of all the supported SMT
 solvers, together with their versions, that Why3 was able to find in
 you machine. These are the solvers that you can use during a proof.
 
-**Note**: for now, just ignore any warning that Why3 might issue about
+**Note 1**: for now, just ignore any warning that Why3 might issue about
 unsupported versions of the solvers.
+
+**Note 2**: if you do not see CVC5 solver among those detected by
+Why3, it might be the case you need to fix something about the
+downloaded `cvc5` binary. Try the following:
+
+  1. change the name of the file from `cvc5-Linux` to simply `cvc5`
+  2. make it executable: `chmod +x cvc5`
+
+Run `why3 config detect` again and check whether CVC5 is now on your
+list of detected solvers.
+
+Now, to actually test your Cameleer installation, write the following
+OCaml program
+
+```
+  let next x =
+    x + 1
+  (*@ r = next x
+        ensures r > x *)
+```
+
+and save it on file `next.ml`. Now, run
+
+```
+  cameleer next.ml
+```
+
+This should immediately bring up the Why3 IDE, where you can start
+your proof (please ignore any warnings Why3 might issue about
+"Unrecognized source format `ocaml`"). On the IDE, can select the
+`next` function node, on the left-hand side of the window, and then
+choose the solver you want to use to verify this function. Do that
+either by right-clicking on the node, and then selecting the solver
+from the drop-down menu; or type the name of solver on the interactive
+bar (right-hand side of the window, on the middle). Any solver should
+easily discharge the generated Verification Conditions for the `next`
+function.
