@@ -43,6 +43,9 @@ then you should be able to work normally.
 The only software you should have already installed in your machine
 is `opam`, the OCaml packages manager.
 
+If you do not have `opam` already installed, please follow these
+[instructions](https://opam.ocaml.org/doc/Install.html).
+
 ### Fresh opam switch
 
 To better follow this tutorial, we suggest you to install a fresh
@@ -73,12 +76,52 @@ repository. Proceed as follows:
 ```
 
 This will create a `cameleer` folder in your machine. Change to that
-folder:
+folder
 
 ```
   cd cameleer
 ```
 
+and then install the package using
+
 ```
   opam pin add . -y
 ```
+
+Not only this will install Cameleer as it will also install all the
+needed dependencies, namely
+
+  - the `gospel` specification language compiler and standard library
+  - `why3`, the Why3 verification framework and toolset
+  - `why3ide`, the interactive graphical user interface.
+
+Use `opam` to install, as well, some SMT solvers that we will be using
+during the tutorial:
+
+```
+  opam install alt-ergo z3
+```
+
+I also recommend you to install the `CVC5` solver. The easiest way is
+to download one of the pre-built binaries from the [GitHub release
+page](https://github.com/cvc5/cvc5/releases/). I will be using the
+release `cvc5-1.0.6` so this might also be a good choice for you. Move
+the downloaded binary to a common Linux folder. For instance,
+`usr/local/bin` is a very good choice.
+
+### Running Cameleer
+
+Before actually running Cameleer on some proof, we need to register
+the installed solvers on Why3 configuration database. Proceed as
+follows:
+
+```
+  why3 config detect
+```
+
+The output of this command is the list of all the supported SMT
+solvers, together with their versions, that Why3 was able to find in
+you machine. These are the solvers that you can use during a proof.
+
+**Note**: for now, just ignore any warning that Why3 might issue about
+unsupported versions of the solvers.
